@@ -9,7 +9,7 @@ LIMITE_SAQUES = 3
 
 def sacar(valor):
     limpar_terminal()
-    global saldo, numero_saques, extrato
+    global saldo, numero_saques
     if numero_saques >= LIMITE_SAQUES:
         print("Limite de saques atingido!")
         return
@@ -38,20 +38,22 @@ def depositar(valor):
 
     global saldo, numero_depositos
     saldo += valor
+
     print(f"""
     Depósito realizado com sucesso!
     Valor: R${valor:.2f}
     """)
+
     numero_depositos += 1
     extrato.update({f"deposito -> {numero_depositos}": valor})
 
 def exibir_extrato():
     limpar_terminal()
-    global extrato
 
     if not extrato:
         print("não foram realizadas movimentações")
         return
+
     print("Depósitos:")
     for key, value in extrato.items():
         if "deposito" in key:
