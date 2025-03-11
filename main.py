@@ -1,4 +1,11 @@
-from utils import depositar, exibir_extrato, sacar
+from utils import (
+    cadastrar_usuario,
+    criar_conta_corrente,
+    depositar,
+    exibir_extrato,
+    sacar,
+)
+from utils.data import conta_corrente, usuarios
 
 menu = """
 
@@ -6,6 +13,8 @@ menu = """
 [s] Sacar
 [e] Extrato
 [q] Sair
+[nc] Nova Conta Corrente
+[nu] Novo Usuário 
 
 => """
 
@@ -21,8 +30,15 @@ while True:
       sacar(valor)
     elif opcao == "e":
       exibir_extrato()
+    elif opcao == "nc":
+      criar_conta_corrente()
+    elif opcao == "nu":
+      cadastrar_usuario()
     elif opcao == "q":
         break
-
+    elif opcao == "v_user":
+        print(usuarios)
+    elif opcao == "v_conta":
+        print(conta_corrente)
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
