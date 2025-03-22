@@ -5,8 +5,6 @@ from utils import (
     exibir_extrato,
     sacar,
 )
-from utils.data import conta_corrente, usuarios
-
 menu = """
 
 [d] Depositar
@@ -36,9 +34,5 @@ while True:
       cadastrar_usuario()
     elif opcao == "q":
         break
-    elif opcao == "v_user":
-        print(usuarios)
-    elif opcao == "v_conta":
-        print(conta_corrente)
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
