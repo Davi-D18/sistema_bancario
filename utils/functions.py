@@ -7,7 +7,7 @@ numero_saques = 0
 numero_depositos = 0
 LIMITE_SAQUES = 3
 
-def sacar(valor):
+def sacar(*, valor):
     limpar_terminal()
     global saldo, numero_saques
     if numero_saques >= LIMITE_SAQUES:
@@ -29,7 +29,7 @@ def sacar(valor):
     else:
         print("Saldo insuficiente!")
 
-def depositar(valor):
+def depositar(valor, /):
     limpar_terminal()
 
     if valor <= 0:

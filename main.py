@@ -27,7 +27,7 @@ while True:
       depositar(valor)
     elif opcao == "s":
       valor = float(input("Digite o valor que deseja sacar: "))
-      sacar(valor)
+      sacar(valor=valor)
     elif opcao == "e":
       exibir_extrato()
     elif opcao == "nc":
